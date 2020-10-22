@@ -85,7 +85,13 @@ class LoginPage extends React.Component {
 
   handleReset(e) {
     e.preventDefault();
+    // this.refs.form.resetFields();
+    this.state.form.login = '';
+    this.state.form.pass = '';
     this.refs.form.resetFields();
+    this.setState({
+      form: Object.assign({}, this.state.form, { login: '', pass: '' })
+    });
   }
 
   onChange(key, value) {
